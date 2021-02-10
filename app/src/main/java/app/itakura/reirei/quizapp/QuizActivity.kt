@@ -1,5 +1,6 @@
 package app.itakura.reirei.quizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -60,6 +61,12 @@ class QuizActivity : AppCompatActivity() {
 
         nextButton.setOnClickListener {
             if(quizCount == quizLists.size){
+                val resultIntent = Intent(this,ResultActivity::class.java)
+
+                resultIntent.putExtra("questionCount",quizCount)
+                resultIntent.putExtra("correctCount",correctCount)
+
+                startActivity(resultIntent)
 
             }else{
                 correctAnswerText.text = ""
