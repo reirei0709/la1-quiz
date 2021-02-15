@@ -3,6 +3,7 @@ package app.itakura.reirei.quizapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
@@ -15,6 +16,11 @@ class ResultActivity : AppCompatActivity() {
 
         val correctCount = intent.getIntExtra("correctCount",0)
         correctCountText.text = correctCount.toString()
+
+        if (correctCount == quizCount) {
+
+            congratulartionAnimation.visibility = View.VISIBLE
+        }
 
         againButton.setOnClickListener {
             val quizIntent = Intent(this,QuizActivity::class.java)

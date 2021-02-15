@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/congratulartionAnimation"
+        android:layout_width="141dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/againButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/congratulations" />
+
     <TextView
         android:id="@+id/captionText"
         android:layout_width="wrap_content"
